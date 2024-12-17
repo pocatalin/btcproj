@@ -2,7 +2,6 @@
 pragma solidity ^0.8.18;
 
 import {Script} from "forge-std/Script.sol";
-import {console} from "forge-std/console.sol";
 import {IBTToken} from "../src/IBTToken.sol";
 
 contract DeployIBTToken is Script {
@@ -12,7 +11,8 @@ contract DeployIBTToken is Script {
         // Deploy the IBTToken contract
         IBTToken ibtToken = new IBTToken();
 
-        console.log("IBTToken contract deployed at:", address(ibtToken));
+        // Prevent unused variable warning
+        ibtToken;
 
         vm.stopBroadcast();
     }
